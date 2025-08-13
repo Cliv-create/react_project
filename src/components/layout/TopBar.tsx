@@ -19,7 +19,7 @@ export function TopBar() {
         <div className="bg-white shadow-sm border-b border-gray-200 px-6 py-4">
             <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-8">
-                    <a href="/" className="text-2xl font-bold text-gray-800">Marketplace</a>
+                    <a href="/" className="text-2xl font-bold text-blue-800">MkT</a>
                 </div>
 
                 <form onSubmit={handleSearch} className="flex-1 max-w-2xl mx-8">

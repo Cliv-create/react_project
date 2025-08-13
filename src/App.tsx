@@ -17,33 +17,21 @@ function App() {
       <Router>
           <AuthProvider>
               <CartProvider>
-                  <Routes>
-                      <Route path="/login" element={<LoginPage />} />
-                      <Route path="/register" element={<RegisterPage />} />
-                      <Route path="/" element={
-                          <Layout>
-                              <HomePage />
-                          </Layout>
-                      } />
-                      <Route path="/category/:categoryId" element={
-                          <Layout>
-                              <CategoryPage />
-                          </Layout>
-                      } />
-                      <Route path="/product/:productId" element={
-                          <Layout>
-                              <ProductPage />
-                          </Layout>
-                      } />
-                      <Route path="/cart/:cartId" element={
-                          <AuthGuard>
-                              <Layout>
+                  <Layout>
+                      <Routes>
+                          <Route path="/login" element={<LoginPage />} />
+                          <Route path="/register" element={<RegisterPage />} />
+                          <Route path="/" element={<HomePage />} />
+                          <Route path="/category/:categoryId" element={<CategoryPage />} />
+                          <Route path="/product/:productId" element={<ProductPage />} />
+                          <Route path="/cart/:cartId" element={
+                              <AuthGuard>
                                   <CartPage />
-                              </Layout>
-                          </AuthGuard>
-                      } />
-                      <Route path="*" element={<Navigate to="/" replace />} />
-                  </Routes>
+                              </AuthGuard>
+                          } />
+                          <Route path="*" element={<Navigate to="/" replace />} />
+                      </Routes>
+                  </Layout>
               </CartProvider>
           </AuthProvider>
       </Router>

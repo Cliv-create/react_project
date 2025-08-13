@@ -25,7 +25,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
                 <h3 className="font-semibold text-gray-800 mb-2">{product.name}</h3>
                 <p className="text-gray-600 text-sm mb-3 line-clamp-2">{product.description}</p>
                 <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-gray-800">${product.price}</span>
+                    <span className="text-2xl font-bold text-gray-800">₴{product.price}</span>
                     <div className="space-x-2">
                         <a
                             href={`/product/${product.id}`}

@@ -1,10 +1,12 @@
 import type {Product} from "../types/Product.ts";
 import type {Category} from "../types/Category.ts";
 import * as React from "react";
+import { useParams } from "react-router";
 import {dataProvider} from "../services/DIContainer.ts";
 import {ProductGrid} from "../components/product/ProductGrid.tsx";
 
 export const CategoryPage: React.FC = () => {
+    const { categoryId } = useParams<{ categoryId: string }>();
     const [products, setProducts] = React.useState<Product[]>([]);
     const [category, setCategory] = React.useState<Category | null>(null);
     const [loading, setLoading] = React.useState(true);
@@ -24,7 +26,7 @@ export const CategoryPage: React.FC = () => {
         };
 
         loadCategoryProducts();
-    }, []);
+    }, [categoryId]);
 
     if (loading) {
         return <div className="flex justify-center items-center h-64">Loading...</div>;
